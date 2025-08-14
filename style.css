@@ -1,0 +1,81 @@
+:root{
+  --beige:#FAF3E0;
+  --navy:#2a3b47;
+  --accent:#d97b4a;
+  --soft:#f1e9df;
+  --card:#fff;
+}
+*{box-sizing:border-box;font-family:Inter, "Noto Sans JP", sans-serif}
+body{margin:0;background:linear-gradient(180deg,var(--beige),#fff);color:var(--navy);min-height:100vh;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:rgba(42,59,71,0.06)}
+.logo{font-weight:800;letter-spacing:1px}
+.logo .co{font-weight:600;color:var(--accent)}
+.nav a{margin:0 8px;color:var(--navy);text-decoration:none;font-weight:600}
+.controls{display:flex;align-items:center;gap:12px}
+.controls button{background:transparent;border:1px solid var(--navy);padding:6px 8px;border-radius:6px}
+.cart{position:relative;padding:6px 10px;border-radius:10px;background:linear-gradient(180deg,#fff, #f3f3f3);cursor:pointer}
+.cart span{background:var(--accent);color:#fff;padding:2px 6px;border-radius:8px;margin-left:6px;font-size:12px}
+
+/* Hero */
+.hero{position:relative;padding:28px 20px;overflow:hidden}
+.hero-inner{max-width:980px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.shopname{font-size:38px;margin:0;text-transform:lowercase;letter-spacing:2px}
+.tagline{color:var(--navy);opacity:0.8;margin-bottom:14px}
+
+/* Slider */
+.slider{display:flex;align-items:center;justify-content:center;gap:12px;position:relative}
+.slides{width:80%;height:320px;border-radius:12px;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.slide{min-width:100%;object-fit:cover;display:none}
+.slide.active{display:block}
+.slide-btn{background:transparent;border:0;font-size:36px;cursor:pointer;color:var(--navy);width:44px;height:44px}
+
+/* bubbles */
+.bubbles{position:absolute;inset:0;pointer-events:none}
+.bubbles span{position:absolute;left:10%;bottom:-40px;width:18px;height:18px;background:rgba(255,255,255,0.6);border-radius:50%;animation:bubble 8s linear infinite;opacity:0.8}
+.bubbles span:nth-child(2){left:30%;animation-duration:9s}
+.bubbles span:nth-child(3){left:50%;animation-duration:7s}
+.bubbles span:nth-child(4){left:70%;animation-duration:10s}
+.bubbles span:nth-child(5){left:85%;animation-duration:11s}
+@keyframes bubble{from{transform:translateY(0) scale(0.6)}to{transform:translateY(-480px) scale(1.2);opacity:0}}
+
+/* sections */
+.section{max-width:980px;margin:24px auto;padding:12px}
+.cozy{background:linear-gradient(90deg,rgba(250,243,224,0.6),rgba(255,255,255,0.6));border-radius:10px;padding:18px}
+
+/* Carousel cards */
+.carousel{display:flex;align-items:center;gap:8px;position:relative}
+.cards{display:flex;gap:12px;overflow:hidden;padding:6px}
+.card{min-width:220px;background:var(--card);border-radius:12px;padding:10px;display:flex;flex-direction:column;align-items:center;box-shadow:0 6px 18px rgba(42,59,71,0.06)}
+.card img{width:140px;height:120px;border-radius:50%;object-fit:cover;border:6px solid var(--soft)}
+.roundcap{margin-top:8px;font-weight:700}
+.cbtn{background:transparent;border:0;font-size:28px;cursor:pointer}
+
+/* grid arrivals with retro price tag */
+.grid.arrivals{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
+.item{position:relative;border-radius:12px;overflow:hidden}
+.item img{width:100%;height:160px;object-fit:cover}
+.item .price{position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;padding:6px 8px;border-radius:6px;font-weight:700;transform:rotate(-6deg);box-shadow:0 6px 12px rgba(0,0,0,0.12)}
+.item button{position:absolute;bottom:10px;right:10px;padding:8px 10px;border-radius:8px;border:0;background:var(--accent);color:#fff}
+
+/* polaroids */
+.polaroids{display:flex;gap:12px;flex-wrap:wrap}
+.polaroid{width:180px;background:#fff;padding:10px;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.06);transform:rotate(-2deg)}
+.polaroid img{width:100%;height:110px;object-fit:cover;border-radius:6px}
+
+/* footer fish swim */
+.sitefoot{margin-top:auto;padding:18px;background:linear-gradient(180deg,#fff, var(--beige));display:flex;justify-content:space-between;align-items:center}
+.fish-swim{animation:swim 6s linear infinite}
+@keyframes swim{0%{transform:translateX(-10px)}50%{transform:translateX(10px)}100%{transform:translateX(-10px)}}
+
+/* modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.4)}
+.modal[aria-hidden="false"]{display:flex}
+.modal-inner{background:#fff;padding:18px;border-radius:10px;max-width:520px;width:90%;position:relative}
+.modal .close{position:absolute;right:10px;top:10px;border:0;background:transparent;font-size:18px}
+
+/* responsive */
+@media (max-width:720px){
+  .slides{height:220px}
+  .shopname{font-size:28px}
+  .card{min-width:160px}
+}
